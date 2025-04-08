@@ -29,7 +29,7 @@ function ListVideos({ videos }) {
             <Thumbnail src={video?.assets?.thumbnail} alt={"thumbnail"} />
             <CardDetails>
               <Title>{video.title}</Title>
-              <NameOwner>Supersong Video</NameOwner>
+              <NameOwner>Superfan Video</NameOwner>
             </CardDetails>
           </PreviewImage>
         );

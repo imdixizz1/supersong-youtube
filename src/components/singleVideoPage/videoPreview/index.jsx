@@ -65,7 +65,7 @@ function VideoPreview({ video }) {
             <Initials>SS</Initials>
           </Avatar>
           <NameCreatorWrapper>
-            <NameCreator>Super song Video</NameCreator>
+            <NameCreator>Superfan Video</NameCreator>
             <NameSuscribers>1.2K suscribers</NameSuscribers>
           </NameCreatorWrapper>
           <a

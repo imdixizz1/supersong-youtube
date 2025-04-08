@@ -50,7 +50,7 @@ function Video({ video }) {
           <TitleWrapper>
             <Title>{title}</Title>
             <SubTitle>
-              <p>Supersong Video</p>
+              <p>Superfan Video</p>
               <p>
                 {view} <IconSeparator size={11} />
                 <span>{newDate.toLocaleDateString()}</span>
