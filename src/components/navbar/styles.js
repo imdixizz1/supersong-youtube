@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import Image from "next/image";
-import YoutubeLogo from "../../../public/logo.jpg";
 
 export const NavbarWrapper = styled.div`
   width: 100%;
