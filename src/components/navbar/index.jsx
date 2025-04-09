@@ -15,7 +15,7 @@ import { Avatar, Initials } from "../homePage/videos/styles";
 import { useRouter } from "next/router";
 import Image from "next/image";
 
-function Navbar({ query, handleQuery, getVideos, removeQuery }) {
+function Navbar({ id,query, handleQuery, getVideos, removeQuery }) {
   const router = useRouter();
 
   return (
