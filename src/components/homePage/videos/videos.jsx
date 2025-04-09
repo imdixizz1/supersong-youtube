@@ -39,7 +39,7 @@ function Video({ video }) {
           preload="auto"
           onClick={() =>
             router.push({
-              pathname: `/${id}`,
+              pathname: `/`,
               query: id,
             })
           }

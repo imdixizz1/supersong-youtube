@@ -1,41 +1,58 @@
 import React from "react";
+import Navbar from "../../src/components/navbar";
 import {
-  ListWrapper,
-  PreviewImage,
-  Thumbnail,
-  Title,
-  NameOwner,
-  CardDetails,
-} from "./styles";
-import { useRouter } from "next/router";
+  ContentVideo,
+  Wrapper,
+  Col1,
+  Col2,
+} from "../../src/components/singleVideoPage/styles";
+import VideoPreview from "../../src/components/singleVideoPage/videoPreview";
+import ListVideos from "../../src/components/singleVideoPage/listPreviewVideos/index";
 
-function ListVideos({ videos }) {
-  const router = useRouter();
+import videoData from "../../videos"; // static JSON
 
+export async function getStaticPaths() {
+  const paths = videoData.map((video) => ({
+    params: { video_id: video.id.toString() },
+  }));
+
+  return {
+    paths,
+    fallback: false, // can also use 'blocking' if needed
+  };
+}
+
+export async function getStaticProps({ params }) {
+  const video = videoData.find((v) => v.id.toString() === params.video_id);
+
+  return {
+    props: {
+      video,
+      allVideos: videoData,
+    },
+  };
+}
+
+function VideoPage({ video, allVideos }) {
   return (
-    <ListWrapper>
-      {videos.map((video) => {
-        const { videoId } = video;
-        return (
-          <PreviewImage
-            key={videoId}
-            onClick={() =>
-              router.push({
-                pathname: `/${videoId}`,
-                query: videoId,
-              })
-            }
-          >
-            <Thumbnail src={video?.assets?.thumbnail} alt={"thumbnail"} />
-            <CardDetails>
-              <Title>{video.title}</Title>
-              <NameOwner>Superfan Video</NameOwner>
-            </CardDetails>
-          </PreviewImage>
-        );
-      })}
-    </ListWrapper>
+    <div>
+      <Navbar />
+      <Wrapper>
+        <ContentVideo>
+          {video && (
+            <>
+              <Col1>
+                <VideoPreview video={video} />
+              </Col1>
+              <Col2>
+                <ListVideos videos={allVideos} />
+              </Col2>
+            </>
+          )}
+        </ContentVideo>
+      </Wrapper>
+    </div>
   );
 }
 
-export default ListVideos;
+export default VideoPage;
