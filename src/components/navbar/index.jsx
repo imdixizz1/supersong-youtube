@@ -25,11 +25,9 @@ function Navbar({ query, handleQuery, getVideos, removeQuery }) {
         <Image
           src="https://admin.compares360.com/storage/logo.jpg"
           alt="Superfan Logo"
-          fill
           className="images"
           height={70}
           width={120}
-          priority
         />
       </LogoWrapper>
       </Col1>
