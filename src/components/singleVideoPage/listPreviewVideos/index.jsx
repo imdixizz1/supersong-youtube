@@ -6,8 +6,9 @@ import {
   Col1,
   Col2,
 } from "../../src/components/singleVideoPage/styles";
-import VideoPreview from "../../src/components/singleVideoPage/videoPreview";
-import ListVideos from "../../src/components/singleVideoPage/listPreviewVideos/index";
+import VideoPreview from "../../singleVideoPage/videoPreview";
+import ListVideos from "../../singleVideoPage/listPreviewVideos/index";
+
 
 import videoData from "../../videos"; // static JSON
 
