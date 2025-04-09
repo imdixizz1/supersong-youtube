@@ -71,7 +71,7 @@ const Sidebar = () => {
       <Footer>
         Made with 🧡 &nbsp;by
         <LinkFooter href="https://superlabs.co" target="_blank" rel="noreferrer">
-          &nbsp;Superfans
+          &nbsp;Superlabs
         </LinkFooter>
       </Footer>
     </Wrapper>

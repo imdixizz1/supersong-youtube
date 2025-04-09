@@ -1,11 +1,12 @@
-/** @type {import('next').NextConfig} */
+// next.config.js
 const nextConfig = {
   reactStrictMode: true,
-};
-
-module.exports = {
+  images: {
+    domains: ['admin.compares360.com'], // ✅ add your image domain here
+  },
   compiler: {
-    // ssr and displayName are configured by default
     styledComponents: true,
   },
 };
+
+module.exports = nextConfig;

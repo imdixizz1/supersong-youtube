@@ -23,7 +23,7 @@ function Navbar({ query, handleQuery, getVideos, removeQuery }) {
       <Col1>
       <LogoWrapper onClick={() => router.push("/")}>
         <Image
-          src="/logo.jpg"
+          src="https://admin.compares360.com/storage/logo.jpg"
           alt="Superfan Logo"
           fill
           className="images"
@@ -52,7 +52,7 @@ function Navbar({ query, handleQuery, getVideos, removeQuery }) {
       </Col2>
       <Col3>
         <Avatar>
-          <Initials>API</Initials>
+          <Initials>SF</Initials>
         </Avatar>
       </Col3>
     </NavbarWrapper>
