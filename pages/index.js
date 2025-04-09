@@ -53,7 +53,7 @@ export default function Home() {
       body: JSON.stringify({ apiKey: state.apiKey, title: query }),
     });
 
-    const { data } = videoJson 
+    const { data } = videoJson;
     setVideos(videoJson);
     setTags(filterTags(data));
   };
@@ -66,7 +66,7 @@ export default function Home() {
         body: JSON.stringify({ apiKey: state.apiKey, title: query }),
       });
 
-      const { data } = videoJson
+      const { data } = videoJson;
       // Handling errors
       if (data.length === 0) {
         alert(
@@ -97,8 +97,13 @@ export default function Home() {
   return (
     <div>
       <Head>
-        <meta name="description" content="Powered by api.video" />
-        <link rel="icon" href="/favicon.ico" />
+        <title>SuperFan | Watch and Discover Music Videos</title>
+        <meta
+          name="description"
+          content="Explore trending music videos powered by SuperFan"
+        />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" href="/fav2.ico" />
       </Head>
       <Navbar
         query={query}

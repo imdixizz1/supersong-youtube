@@ -24,7 +24,7 @@ function Navbar({ query, handleQuery, getVideos, removeQuery }) {
       </Col1>
       <Col2>
         <SearchInput
-          placeholder="Search by title"
+          placeholder="Find your favourite artist"
           value={query}
           onChange={handleQuery}
         />
