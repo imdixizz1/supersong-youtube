@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import Image from "next/image";
+import YoutubeLogo from "../../../public/logo.jpg";
 
 export const NavbarWrapper = styled.div`
   width: 100%;
@@ -11,6 +12,21 @@ export const NavbarWrapper = styled.div`
   background-color: #fff;
   gap: 20px;
 `;
+
+export const Logo = styled(Image).attrs({
+  src: YoutubeLogo,
+  width: "120px",
+  height: "50px",
+})`
+  object-fit: cover;
+  cursor: pointer;
+
+  @media (max-width: 600px) {
+    width: 60px;
+    height: auto;
+  }
+`;
+
 
 export const Col1 = styled.div`
   display: flex;
@@ -46,6 +62,8 @@ export const SearchInput = styled.input`
   box-shadow: inset 0 1px 2px #eee;
   color: #111111;
 `;
+
+
 
 export const SearchButton = styled.div`
   border: 1px solid #ccc;

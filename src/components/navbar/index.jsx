@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import {
   NavbarWrapper,
-  LogoWrapper,
   Logo,
   SearchInput,
   SearchButton,
@@ -21,10 +20,7 @@ function Navbar({ id,query, handleQuery, getVideos, removeQuery }) {
   return (
     <NavbarWrapper>
       <Col1>
-      <LogoWrapper onClick={() => router.push("/")}>
-      <h1 class="superfan-text">SUPERFAN</h1>
-
-      </LogoWrapper>
+      <Logo onClick={() => router.push("/")} />
       </Col1>
       <Col2>
         <SearchInput
