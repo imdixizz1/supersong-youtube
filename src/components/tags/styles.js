@@ -29,3 +29,32 @@ export const Chip = styled.div`
   background-color: ${(props) => (props.isActive ? "#030303" : "#e8e8e8")};
   border: 1px solid #ccc;
 `;
+
+export const HeroBanner = styled.div`
+  position: relative;
+  width: 100vw;
+  height: 100vh; /* full viewport height */
+  margin: 0;
+  border-radius: 0;
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+`;
+
+
+export const BannerText = styled.div`
+  position: absolute;
+  bottom: 5%;
+  left: 5%;
+  color: white;
+  font-size: clamp(18px, 4vw, 36px);
+  font-weight: 700;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.7);
+  z-index: 2;
+`;
+

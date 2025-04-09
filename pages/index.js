@@ -10,6 +10,11 @@ import { useApiKeyContext } from "../src/components/provider/ApiKeys";
 import { Actions } from "../src/components/provider/ApiKeys/reducer";
 import { filterTags } from "../src/utils/functions/index";
 import videoJson from "../src/components/videos";
+import { BannerText,HeroBanner } from "../src/components/tags/styles";
+import Image from "next/image";
+
+
+
 export default function Home() {
   const [videos, setVideos] = useState([]);
   const [query, setQuery] = useState("");
@@ -71,6 +76,18 @@ export default function Home() {
       <Wrapper>
         <Sidebar />
         <GridWrapper>
+        <HeroBanner>
+        <Image
+  src="/hero.webp"
+  alt="Music Banner"
+  height={300}
+  width={1200}
+  priority
+  className="w-full"
+/>
+
+    <BannerText>Discover the Best in Music 🎵</BannerText>
+  </HeroBanner>
           <Tags tags={tags} activeTag={activeTag} handleActiveTag={handleActiveTag} />
           <GridVideos videos={videos} activeTag={activeTag} />
         </GridWrapper>
