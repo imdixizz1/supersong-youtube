@@ -1,196 +1,256 @@
 const videoJson = [
   {
     id: 1,
-    title: "Blinding Lights - The Weeknd",
+    title: "Hyme for the weeknd",
     src: "/video/1.mp4",
+    type: "",
     description: "A high-energy hit that defined the 2020s pop era.",
     views: 1345829,
     commentCount: 4321,
     likeCount: 87500,
-    thumbnail:"https://avatars.mds.yandex.net/i?id=d213edf99e7b263dbdc60d3333326103986e1820-8497272-images-thumbs&n=13"
+    thumbnail: "/image/1.png",
+    author: "Maroon 5",
+    text: "M5",
+    date: "2 years ago"
   },
   {
     id: 2,
-    title: "Shallow - Lady Gaga & Bradley Cooper",
+    title: "Let me love you",
     src: "/video/2.mp4",
+    type: "",
     description: "An emotional ballad from 'A Star is Born'.",
     views: 2456873,
     commentCount: 5821,
     likeCount: 152300,
-    thumbnail:"https://avatars.mds.yandex.net/i?id=ab3d210ac5abff6fd052bb68c03a4674c37dea06-5288772-images-thumbs&n=13"
-
+    thumbnail: "/image/2.png",
+    author: "Justin Bieber",
+    text: "JB",
+    date: "1 year ago"
   },
   {
     id: 3,
-    title: "Shape of You - Ed Sheeran",
+    title: "Don't Start Now",
     src: "/video/3.mp4",
+    type: "",
     description: "A catchy tune that took over global charts.",
     views: 9382712,
     commentCount: 10245,
-    thumbnail:"https://avatars.mds.yandex.net/i?id=57892a79967cfbfbeda1f995be20e694bc292322-10092505-images-thumbs&n=13",
-
-    likeCount: 681200
+    thumbnail: "/image/3.png",
+    author: "Dua Lipa",
+    text: "DL",
+    likeCount: 681200,
+    date: "3 years ago"
   },
   {
     id: 4,
-    title: "Someone Like You - Adele",
+    title: "Levitating",
     src: "/video/4.mp4",
+    type: "",
     description: "A soulful song of heartbreak and reflection.",
     views: 5439281,
-    thumbnail:"https://avatars.mds.yandex.net/i?id=c5307f064928964685c8d35812aebde781711336-8224882-images-thumbs&n=13",
+    thumbnail: "/image/4.png",
     commentCount: 6541,
-    likeCount: 412000
+    author: "Dua Lipa",
+    text: "DL",
+    likeCount: 412000,
+    date: "1 year ago"
   },
   {
     id: 5,
-    title: "Sorry - Justin Bieber",
+    title: "New rules",
     src: "/video/5.mp4",
+    type: "",
     description: "A dance-pop apology anthem.",
     views: 4281947,
-    thumbnail:"https://avatars.mds.yandex.net/i?id=4b4fa08b4989bdc4e47b85f5d5be0651c2325f94-4902600-images-thumbs&n=13",
+    thumbnail: "/image/5.png",
     commentCount: 3999,
-    likeCount: 312000
+    author: "Dua Lipa",
+    text: "DL",
+    likeCount: 312000,
+    date: "2 years ago"
   },
   {
     id: 6,
-    title: "Señorita - Shawn Mendes & Camila Cabello",
+    title: "Sorry- Justin Bieber",
     src: "/video/6.mp4",
+    type: "",
     description: "A romantic duet with Latin vibes.",
     views: 3912843,
-    thumbnail:"https://avatars.mds.yandex.net/i?id=2ed6e9402122a9f636e4cedaa6406dba18f5cf73-7975524-images-thumbs&n=13",
+    thumbnail: "/image/6.png",
     commentCount: 3212,
-    likeCount: 284300
+    author: "Justin Bieber",
+    text: "JB",
+    likeCount: 284300,
+    date: "6 months ago"
   },
   {
     id: 7,
-    title: "Levitating - Dua Lipa",
+    title: "Girls like you - Maroon 5",
     src: "/video/7.mp4",
+    type: "",
     description: "A disco-pop banger that gets you moving.",
     views: 2749201,
-    thumbnail:"https://avatars.mds.yandex.net/i?id=7d44398e255660f37acc757490bf9df015f83bfd-3739799-images-thumbs&n=13",
+    thumbnail: "/image/7.png",
     commentCount: 2873,
-    likeCount: 190200
+    author: "Maroon 5",
+    text: "M5",
+    likeCount: 190200,
+    date: "3 years ago"
   },
   {
     id: 8,
-    title: "Can’t Feel My Face - The Weeknd",
+    title: "Memories - Maroon 5",
     src: "/video/8.mp4",
+    type: "",
     description: "A groovy song with an 80s vibe.",
     views: 3215984,
-    thumbnail:"https://avatars.mds.yandex.net/i?id=861b4152aed4be04ea731838bb83e569709a8a1767124d22-9831149-images-thumbs&n=13",
+    thumbnail: "/image/8.png",
     commentCount: 3145,
-    likeCount: 244000
+    author: "Maroon 5",
+    text: "M5",
+    likeCount: 244000,
+    date: "11 months ago"
   },
   {
     id: 9,
-    title: "Roar - Katy Perry",
+    title: "Sugar - Maroon 5",
     src: "/video/9.mp4",
+    type: "",
     description: "An empowering anthem of self-belief.",
     views: 4782134,
-    thumbnail:"https://avatars.mds.yandex.net/i?id=8d2b3c500b7f4b1ef12597a961a69055f0a51bce-12413135-images-thumbs&n=13",
+    thumbnail: "/image/9.png",
     commentCount: 5034,
-    likeCount: 376100
+    author: "Maroon 5",
+    text: "M5",
+    likeCount: 376100,
+    date: "5 years ago"
   },
   {
     id: 10,
-    title: "Stay - The Kid LAROI & Justin Bieber",
+    title: "The nights",
     src: "/video/10.mp4",
+    type: "",
     description: "An energetic track with emotional lyrics.",
     views: 3847261,
-    thumbnail:"https://avatars.mds.yandex.net/i?id=0e818d0411d0242318d89a29294b0dcfd1590444-9161202-images-thumbs&n=13",
+    thumbnail: "/image/10.png",
     commentCount: 4382,
-    likeCount: 298700
+    author: "One direction",
+    text: "OD",
+    likeCount: 298700,
+    date: "1 year ago"
   },
   {
     id: 11,
-    title: "Bad Guy - Billie Eilish",
+    title: "Espresso",
     src: "/video/11.mp4",
+    type: "",
     description: "A minimalist, edgy pop song.",
     views: 5162489,
-    thumbnail:"https://avatars.mds.yandex.net/i?id=5c5f13e1c6ab2170fba7cec9bf000c9dc035c4d6-7215189-images-thumbs&n=13",
+    thumbnail: "/image/11.png",
     commentCount: 6239,
-    likeCount: 402000
+    author: "Sabrina Carpenter",
+    text: "SC",
+    likeCount: 402000,
+    date: "3 months ago"
   },
   {
     id: 12,
-    title: "Uptown Funk - Bruno Mars",
+    title: "No lie ",
     src: "/video/12.mp4",
+    type: "",
     description: "A funky throwback hit with timeless energy.",
     views: 7382945,
     commentCount: 7384,
-    thumbnail:"https://avatars.mds.yandex.net/i?id=2ec419cf59b7b827aedffa8e8fcba739-4835645-images-thumbs&n=13",
-    likeCount: 580000
+    thumbnail: "/image/12.png",
+    author: "Sean paul",
+    text: "SP",
+    likeCount: 580000,
+    date: "4 years ago"
   },
   {
     id: 13,
-    title: "Love Me Like You Do - Ellie Goulding",
+    title: "Nothing holds me back",
     src: "/video/13.mp4",
+    type: "",
     description: "A passionate ballad from 'Fifty Shades of Grey'.",
     views: 3847521,
     commentCount: 4211,
-    thumbnail:"https://avatars.mds.yandex.net/i?id=227fc329fec12c9b15b95291567df772b6c8ab6a-12629451-images-thumbs&n=13",
-    likeCount: 310500
+    author: "Shaun mendes",
+    text: "SM",
+    thumbnail: "/image/13.png",
+    likeCount: 310500,
+    date: "2 years ago"
   },
   {
     id: 14,
-    title: "Blank Space - Taylor Swift",
+    title: "Sanorita",
     src: "/video/14.mp4",
+    type: "",
+    author: "Shaun mendes",
     description: "A satirical take on celebrity love stories.",
-    thumbnail:"https://avatars.mds.yandex.net/i?id=6e7fd9ea681ae1f9193edc1c8020e74ed9127735-9666026-images-thumbs&n=13",
+    thumbnail: "/image/14.png",
     views: 6249183,
+    text: "SM",
     commentCount: 6987,
-    likeCount: 490800
+    likeCount: 490800,
+    date: "9 months ago"
   },
   {
     id: 15,
-    title: "Dark Horse - Katy Perry ft. Juicy J",
+    title: "Cheap thrills",
     src: "/video/15.mp4",
+    type: "",
+    author: "Sia",
     description: "A spellbinding mix of trap and pop.",
     views: 4218592,
-    thumbnail:"https://avatars.mds.yandex.net/i?id=e8c55e5ed599db649fbb50acc777c9165883eca9-4119220-images-thumbs&n=13",
+    thumbnail: "/image/15.png",
+    text: "SA",
     commentCount: 3771,
-    likeCount: 330200
+    likeCount: 330200,
+    date: "6 months ago"
   },
   {
     id: 16,
-    title: "Happier - Marshmello ft. Bastille",
+    title: "Blank space",
     src: "/video/16.mp4",
+    type: "",
+    author: "Taylor Swift",
     description: "A bittersweet electronic pop anthem.",
     views: 2984721,
-    thumbnail:"https://avatars.mds.yandex.net/i?id=5f8ab1c6e0256b063da53411547aac1b6aa955d2-7755772-images-thumbs&n=13",
+    thumbnail: "/image/16.png",
+    text: "Ts",
     commentCount: 2893,
-    likeCount: 243900
+    likeCount: 243900,
+    date: "8 years ago"
   },
   {
     id: 17,
-    title: "7 Rings - Ariana Grande",
+    title: "Closer",
     src: "/video/17.mp4",
+    type: "",
+    author: "Chainsmokers",
     description: "A luxurious trap-pop hit.",
     views: 4378291,
-    thumbnail:"https://avatars.mds.yandex.net/i?id=d99b88195ba1b8216c75fef700a83d94d2905711-5234137-images-thumbs&n=13",
+    thumbnail: "/image/17.png",
     commentCount: 4082,
-    likeCount: 362400
+    text: "CS",
+    likeCount: 362400,
+    date: "7 years ago"
   },
   {
     id: 18,
     title: "See You Again - Wiz Khalifa ft. Charlie Puth",
     src: "/video/18.mp4",
+    type: "",
+    author: "Charlie Puth",
     description: "A tribute track full of emotion.",
     views: 6382819,
-    thumbnail:"https://avatars.mds.yandex.net/i?id=df649dfef25a45d3d21a1976732a786401017590-4571959-images-thumbs&n=13",
+    thumbnail: "/image/18.png",
     commentCount: 6723,
-    likeCount: 518900
+    text: "Cp",
+    likeCount: 518900,
+    date: "9 years ago"
   },
-  {
-    id: 19,
-    title: "Peaches - Justin Bieber ft. Daniel Caesar, Giveon",
-    src: "/video/19.mp4",
-    description: "A smooth, vibey hit of the summer.",
-    views: 3958712,
-    thumbnail:"https://avatars.mds.yandex.net/i?id=7fa1cbbfddee477dc318f3c5d4dc218ed9bd2dfb-6712958-images-thumbs&n=13",
-    commentCount: 3410,
-    likeCount: 299100
-  }
 ];
 
 export default videoJson;

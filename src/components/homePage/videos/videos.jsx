@@ -17,7 +17,7 @@ function Video({ video }) {
 
   console.log("video===", video);
 
-  const { thumbnail, id, title, createdAt,src } = video;
+  const { thumbnail, id, title, createdAt,src ,author,text,date} = video;
   const [view, setView] = useState("");
   const router = useRouter();
 
@@ -48,15 +48,15 @@ function Video({ video }) {
         </CustomVideos>
         <SubInformationsWrapper>
           <Avatar>
-            <Initials>API</Initials>
+            <Initials>{text}</Initials>
           </Avatar>
           <TitleWrapper>
             <Title>{title}</Title>
             <SubTitle>
-              <p>Superfan Video</p>
+              <p>{author}</p>
               <p>
-                {view} <IconSeparator size={11} />
-                <span>{newDate.toLocaleDateString()}</span>
+                {view + " views"} <IconSeparator size={11} />
+                <span>{date}</span>
               </p>
             </SubTitle>
           </TitleWrapper>

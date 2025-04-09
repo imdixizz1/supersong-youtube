@@ -27,6 +27,10 @@ html {
   a {
   text-decoration: none;
   color: inherit;
+  
+}
+  image {
+  object-fit: cover;
 }
 `;
 

@@ -19,19 +19,18 @@ export const Col1 = styled.div`
   align-items: center;
 `;
 
-export const Logo = styled(Image).attrs({
-  src: YoutubeLogo,
-  width: "120",
-  height: "50px",
-})`
-  object-fit: cover;
+export const LogoWrapper = styled.div`
+  width: 120px;
+  height: 50px;
+  position: relative;
   cursor: pointer;
   margin-top: 10px;
+  display: flex;
   justify-content: center;
 
   @media (max-width: 600px) {
     width: 60px;
-    height: auto;
+    height: 30px;
   }
 `;
 

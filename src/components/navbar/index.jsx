@@ -13,6 +13,7 @@ import {
 import { Search, Menu, Bell, X } from "react-feather";
 import { Avatar, Initials } from "../homePage/videos/styles";
 import { useRouter } from "next/router";
+import Image from "next/image";
 
 function Navbar({ query, handleQuery, getVideos, removeQuery }) {
   const router = useRouter();
@@ -20,7 +21,17 @@ function Navbar({ query, handleQuery, getVideos, removeQuery }) {
   return (
     <NavbarWrapper>
       <Col1>
-        <Logo onClick={() => router.push("/")} />
+      <LogoWrapper onClick={() => router.push("/")}>
+        <Image
+          src="/logo.jpg"
+          alt="Superfan Logo"
+          fill
+          className="images"
+          height={70}
+          width={120}
+          priority
+        />
+      </LogoWrapper>
       </Col1>
       <Col2>
         <SearchInput
