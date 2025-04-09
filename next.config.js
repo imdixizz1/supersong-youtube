@@ -1,11 +1,11 @@
-// next.config.js
+/** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  images: {
-    domains: ['admin.compares360.com'], // ✅ add your image domain here
-  },
   compiler: {
     styledComponents: true,
+  },
+  images: {
+    domains: ['admin.compares360.com'],
   },
 };
 

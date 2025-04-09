@@ -2,7 +2,16 @@ import React from "react";
 import { Wrapper, Chip } from "./styles";
 import { capitalizeFirstLetter } from "../../utils/functions/index";
 
-function Tags({ tags, activeTag, handleActiveTag }) {
+const customTags = [
+  "Rock",
+  "Metal",
+  "Classic",
+  "Pop",
+  "New"
+
+];
+
+function Tags({ activeTag, handleActiveTag }) {
   return (
     <Wrapper>
       <Chip
@@ -11,17 +20,15 @@ function Tags({ tags, activeTag, handleActiveTag }) {
       >
         All
       </Chip>
-      {tags.map((tag) => {
-        return (
-          <Chip
-            key={tag}
-            isActive={activeTag === tag}
-            onClick={() => handleActiveTag(tag)}
-          >
-            {capitalizeFirstLetter(tag)}
-          </Chip>
-        );
-      })}
+      {customTags.map((tag) => (
+        <Chip
+          key={tag}
+          isActive={activeTag === tag}
+          onClick={() => handleActiveTag(tag)}
+        >
+          {capitalizeFirstLetter(tag)}
+        </Chip>
+      ))}
     </Wrapper>
   );
 }

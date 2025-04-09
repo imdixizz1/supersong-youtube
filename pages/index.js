@@ -15,24 +15,21 @@ export default function Home() {
   const [query, setQuery] = useState("");
   const [tags, setTags] = useState([]);
   const [activeTag, setActiveTag] = useState("All");
-  const [apiKey, setApiKey] = useState("");
-
-  const { state, dispatch } = useApiKeyContext();
 
   useEffect(() => {
-    getVideos();
-  }, [query]);
+    handleFiltering();
+  }, [query, activeTag]);
 
   useEffect(() => {
-    apiKey && getVideosQuery();
-  }, [state.apiKey]);
+    const allTags = filterTags(videoJson);
+    setTags(allTags);
+  }, []);
 
   const handleQuery = (event) => {
-    const { value } = event.target;
-    setQuery(value);
+    setQuery(event.target.value);
   };
 
-  const removeQuery = async (event) => {
+  const removeQuery = (event) => {
     event.stopPropagation();
     setQuery("");
   };
@@ -41,91 +38,40 @@ export default function Home() {
     setActiveTag(tag);
   };
 
-  const handleApikey = (event) => {
-    const { value } = event.target;
-    setApiKey(value);
-  };
+  const handleFiltering = () => {
+    let filtered = videoJson;
 
-  const getVideos = async () => {
-    const response = await fetch("api/content", {
-      method: "Post",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ apiKey: state.apiKey, title: query }),
-    });
-
-    const { data } = videoJson;
-    setVideos(videoJson);
-    setTags(filterTags(data));
-  };
-
-  const getVideosQuery = async () => {
-    try {
-      const response = await fetch("api/content", {
-        method: "Post",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ apiKey: state.apiKey, title: query }),
-      });
-
-      const { data } = videoJson;
-      // Handling errors
-      if (data.length === 0) {
-        alert(
-          "You need to upload at least a video in your sandbox api.video account in order to preview the result. Go to https://dashboard.api.video"
-        );
-        setApiKey("");
-        return dispatch({
-          type: Actions.SET_API_KEYS,
-          payload: { apiKey: "" },
-        });
-      }
-      setVideos(data);
-      setTags(filterTags(data));
-    } catch (error) {
-      alert("Wrong API Key entered, please check your API Key");
-      setApiKey("");
-      dispatch({
-        type: Actions.SET_API_KEYS,
-        payload: { apiKey: "" },
-      });
+    if (activeTag !== "All") {
+      filtered = filtered.filter((video) =>
+        video.type.toLowerCase().includes(activeTag.toLowerCase())
+      );
     }
+
+    if (query.trim()) {
+      filtered = filtered.filter((video) =>
+        video.title.toLowerCase().includes(query.toLowerCase())
+      );
+    }
+
+    setVideos(filtered);
   };
 
-  const getNewVideo = () => {
-    dispatch({ type: Actions.SET_API_KEYS, payload: { apiKey: apiKey } });
-  };
 
   return (
-    <div>
+<div>
       <Head>
         <title>SuperFan | Watch and Discover Music Videos</title>
-        <meta
-          name="description"
-          content="Explore trending music videos powered by SuperFan"
-        />
+        <meta name="description" content="Explore trending music videos powered by SuperFan" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/fav2.ico" />
       </Head>
-      <Navbar
-        query={query}
-        handleQuery={handleQuery}
-        getVideos={getVideos}
-        removeQuery={removeQuery}
-      />
+
+      <Navbar query={query} handleQuery={handleQuery} getVideos={handleFiltering} removeQuery={removeQuery} />
 
       <Wrapper>
         <Sidebar />
         <GridWrapper>
-          <ApikeyInput
-            apiKey={apiKey}
-            handleApikey={handleApikey}
-            getVideos={getNewVideo}
-          />
-
-          <Tags
-            tags={tags}
-            activeTag={activeTag}
-            handleActiveTag={handleActiveTag}
-          />
+          <Tags tags={tags} activeTag={activeTag} handleActiveTag={handleActiveTag} />
           <GridVideos videos={videos} activeTag={activeTag} />
         </GridWrapper>
       </Wrapper>
