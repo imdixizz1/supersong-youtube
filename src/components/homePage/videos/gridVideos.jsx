@@ -4,14 +4,17 @@ import { GridBroadcast } from "./styles";
 
 function GridVideos({ videos, activeTag }) {
   const filterElement = (videos) => {
-    if (activeTag === "All") {
-      return videos;
-    } else {
-      return videos.filter((video) =>
-        video?.tags.map((el) => el.toLowerCase()).includes(activeTag)
-      );
-    }
+    // if (activeTag === "All") {
+    
+    // } else {
+    //   return videos.filter((video) =>
+    //     video?.tags.map((el) => el.toLowerCase()).includes(activeTag)
+    //   );
+    // }
+  return videos;
+
   };
+
 
   return (
     <>

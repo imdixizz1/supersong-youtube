@@ -9,7 +9,7 @@ import Navbar from "../src/components/navbar";
 import { useApiKeyContext } from "../src/components/provider/ApiKeys";
 import { Actions } from "../src/components/provider/ApiKeys/reducer";
 import { filterTags } from "../src/utils/functions/index";
-
+import videoJson from "../src/components/videos";
 export default function Home() {
   const [videos, setVideos] = useState([]);
   const [query, setQuery] = useState("");
@@ -53,8 +53,8 @@ export default function Home() {
       body: JSON.stringify({ apiKey: state.apiKey, title: query }),
     });
 
-    const { data } = await response.json();
-    setVideos(data);
+    const { data } = videoJson 
+    setVideos(videoJson);
     setTags(filterTags(data));
   };
 
@@ -66,7 +66,7 @@ export default function Home() {
         body: JSON.stringify({ apiKey: state.apiKey, title: query }),
       });
 
-      const { data } = await response.json();
+      const { data } = videoJson
       // Handling errors
       if (data.length === 0) {
         alert(

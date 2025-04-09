@@ -14,7 +14,10 @@ import {
 import { useRouter } from "next/router";
 
 function Video({ video }) {
-  const { assets, videoId, title, createdAt } = video;
+
+  console.log("video===", video);
+
+  const { thumbnail, id, title, createdAt,src } = video;
   const [view, setView] = useState("");
   const router = useRouter();
 
@@ -22,12 +25,12 @@ function Video({ video }) {
     setView(Math.floor(Math.random() * 1000));
   }, []);
 
-  let newDate = new Date(createdAt);
+  let newDate = new Date();
 
   return (
     <>
       <Wrapper>
-        <Thumbnail src={assets?.thumbnail} alt={"thumbnail"}></Thumbnail>
+        <Thumbnail src={thumbnail} alt={"thumbnail"}></Thumbnail>
 
         <CustomVideos
           autoPlay
@@ -36,12 +39,12 @@ function Video({ video }) {
           preload="auto"
           onClick={() =>
             router.push({
-              pathname: `/${videoId}`,
-              query: videoId,
+              pathname: `/${id}`,
+              query: id,
             })
           }
         >
-          <source src={assets?.mp4} type="video/mp4" />
+          <source src={src} type="video/mp4" />
         </CustomVideos>
         <SubInformationsWrapper>
           <Avatar>
