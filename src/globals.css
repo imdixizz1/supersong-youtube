@@ -3,3 +3,26 @@
 .images {
     object-fit: cover!important;
 }
+
+.superfan-text {
+    font-size: 2.2rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    background: linear-gradient(90deg, #0000ff, #ffff00);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    position: relative;
+    font-family: 'Arial Black', sans-serif;
+    letter-spacing: 0.05em;
+  }
+  
+  /* 3D Shadow */
+  .superfan-text::after {
+    content: 'SUPERFAN';
+    position: absolute;
+    left: 4px;
+    top: 4px;
+    color: #000;
+    z-index: -1;
+  }
+  

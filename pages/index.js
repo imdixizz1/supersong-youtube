@@ -76,18 +76,17 @@ export default function Home() {
       <Wrapper>
         <Sidebar />
         <GridWrapper>
-        <HeroBanner>
+        {/* <HeroBanner>
         <Image
-  src="/hero.webp"
+  src="/images.png"
   alt="Music Banner"
   height={300}
   width={1200}
   priority
-  className="w-full"
 />
 
     <BannerText>Discover the Best in Music 🎵</BannerText>
-  </HeroBanner>
+  </HeroBanner> */}
           <Tags tags={tags} activeTag={activeTag} handleActiveTag={handleActiveTag} />
           <GridVideos videos={videos} activeTag={activeTag} />
         </GridWrapper>

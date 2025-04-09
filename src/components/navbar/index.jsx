@@ -22,13 +22,8 @@ function Navbar({ id,query, handleQuery, getVideos, removeQuery }) {
     <NavbarWrapper>
       <Col1>
       <LogoWrapper onClick={() => router.push("/")}>
-        <Image
-          src="/logo.jpg"
-          alt="Superfan Logo"
-          className="images"
-          height={70}
-          width={120}
-        />
+      <h1 class="superfan-text">SUPERFAN</h1>
+
       </LogoWrapper>
       </Col1>
       <Col2>
