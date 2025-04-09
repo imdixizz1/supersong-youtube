@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import Image from "next/image";
-import YoutubeLogo from "../../../public/logo.jpg";
 
 export const NavbarWrapper = styled.div`
   width: 100%;
@@ -13,17 +12,14 @@ export const NavbarWrapper = styled.div`
   gap: 20px;
 `;
 
-export const Logo = styled(Image).attrs({
-  src: YoutubeLogo,
-  width: "120px",
-  height: "50px",
-})`
-  object-fit: cover;
+export const Logo = styled.img`
+  width: 120px;
+  height: auto;
+  object-fit: contain;
   cursor: pointer;
 
-  @media (max-width: 600px) {
-    width: 60px;
-    height: auto;
+  @media (max-width: 768px) {
+    width: 90px;
   }
 `;
 
