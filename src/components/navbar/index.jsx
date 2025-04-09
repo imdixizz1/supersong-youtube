@@ -14,6 +14,7 @@ import { Search, Menu, Bell, X } from "react-feather";
 import { Avatar, Initials } from "../homePage/videos/styles";
 import { useRouter } from "next/router";
 import Image from "next/image";
+import logo from "../../assets/logo.jpg";
 
 function Navbar({ id,query, handleQuery, getVideos, removeQuery }) {
   const router = useRouter();
@@ -23,7 +24,7 @@ function Navbar({ id,query, handleQuery, getVideos, removeQuery }) {
       <Col1>
       <LogoWrapper onClick={() => router.push("/")}>
         <Image
-          src="https://admin.compares360.com/storage/logo.jpg"
+          src={logo}
           alt="Superfan Logo"
           className="images"
           height={70}
