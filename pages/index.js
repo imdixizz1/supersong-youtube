@@ -81,7 +81,7 @@ export default function Home() {
       <Wrapper>
         <Sidebar />
         <GridWrapper>
-          <HeroBanner>
+          {/* <HeroBanner>
             <image
               src="/images.png"
               alt="Music Banner"
@@ -90,8 +90,8 @@ export default function Home() {
               
             />
 
-            <BannerText>Discover the Best in Music 🎵</BannerText>
-          </HeroBanner>
+            <BannerText>Discover the Best in Music with Superfan  🎵</BannerText>
+          </HeroBanner> */}
           <Tags
             tags={tags}
             activeTag={activeTag}
