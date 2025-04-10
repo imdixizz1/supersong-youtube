@@ -10,10 +10,8 @@ import { useApiKeyContext } from "../src/components/provider/ApiKeys";
 import { Actions } from "../src/components/provider/ApiKeys/reducer";
 import { filterTags } from "../src/utils/functions/index";
 import videoJson from "../src/components/videos";
-import { BannerText,HeroBanner } from "../src/components/tags/styles";
+import { BannerText, HeroBanner } from "../src/components/tags/styles";
 import Image from "next/image";
-
-
 
 export default function Home() {
   const [videos, setVideos] = useState([]);
@@ -61,33 +59,44 @@ export default function Home() {
     setVideos(filtered);
   };
 
-
   return (
-<div>
+    <div>
       <Head>
         <title>SuperFan | Watch and Discover Music Videos</title>
-        <meta name="description" content="Explore trending music videos powered by SuperFan" />
+        <meta
+          name="description"
+          content="Explore trending music videos powered by SuperFan"
+        />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/fav2.ico" />
       </Head>
 
-      <Navbar query={query} handleQuery={handleQuery} getVideos={handleFiltering} removeQuery={removeQuery} />
+      <Navbar
+        query={query}
+        handleQuery={handleQuery}
+        getVideos={handleFiltering}
+        removeQuery={removeQuery}
+      />
 
       <Wrapper>
         <Sidebar />
         <GridWrapper>
-        {/* <HeroBanner>
-        <Image
-  src="/images.png"
-  alt="Music Banner"
-  height={300}
-  width={1200}
-  priority
-/>
+          <HeroBanner>
+            <image
+              src="/images.png"
+              alt="Music Banner"
+              height={300}
+              width={1200}
+              
+            />
 
-    <BannerText>Discover the Best in Music 🎵</BannerText>
-  </HeroBanner> */}
-          <Tags tags={tags} activeTag={activeTag} handleActiveTag={handleActiveTag} />
+            <BannerText>Discover the Best in Music 🎵</BannerText>
+          </HeroBanner>
+          <Tags
+            tags={tags}
+            activeTag={activeTag}
+            handleActiveTag={handleActiveTag}
+          />
           <GridVideos videos={videos} activeTag={activeTag} />
         </GridWrapper>
       </Wrapper>
