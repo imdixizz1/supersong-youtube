@@ -1,6 +1,7 @@
 import React from "react";
 import {
   Wrapper,
+  ScrollContent,
   Container,
   Text,
   HrElement,
@@ -19,63 +20,34 @@ import {
 } from "react-feather";
 
 const Sidebar = () => {
-  const firstMenu = [
-    { icon: "Home", value: "Home" },
-    { icon: "Compass", value: "Explore" },
-    { icon: "Activity", value: "Shorts" },
-    { icon: "Video", value: "Memberships" },
-  ];
-  const firstsecondMenuMenu = [
-    { icon: "Youtube", value: "Library" },
-    { icon: "Archive", value: "Historic" },
-    { icon: "Clock", value: "Watch later" },
-    { icon: "ThumbsUp", value: "Likes" },
-  ];
   return (
     <Wrapper>
-      <Container style={{ backgroundColor: "#cecece" }}>
-        <Home />
-        <Text>Home</Text>
-      </Container>
-      <Container>
-        <Compass />
-        <Text>Explore</Text>
-      </Container>
-      <Container>
-        <Activity />
-        <Text>Shorts</Text>
-      </Container>
-      <Container>
-        <Video />
-        <Text>Memberships</Text>
-      </Container>
+      <ScrollContent>
+        <Container><Home /><Text>Home</Text></Container>
+        <Container><Compass /><Text>Explore</Text></Container>
+        <Container><Activity /><Text>Shorts</Text></Container>
+        <Container><Video /><Text>Memberships</Text></Container>
+        <HrElement />
+        <Container><Youtube /><Text>Library</Text></Container>
+        <Container><Archive /><Text>Historic</Text></Container>
+        <Container><Clock /><Text>Watch later</Text></Container>
+        <Container><ThumbsUp /><Text>Likes</Text></Container>
+      </ScrollContent>
 
-      <HrElement />
-
-      <Container style={{ marginTop: "1rem" }}>
-        <Youtube />
-        <Text>Library</Text>
-      </Container>
-      <Container>
-        <Archive />
-        <Text>Historic</Text>
-      </Container>
-      <Container>
-        <Clock />
-        <Text>Watch later</Text>
-      </Container>
-      <Container>
-        <ThumbsUp />
-        <Text>Likes</Text>
-      </Container>
+      {/* Footer moved outside of scrollable content */}
       <Footer>
         Made with 🧡 &nbsp;by
-        <LinkFooter href="https://superlabs.co" target="_blank" rel="noreferrer">
-          &nbsp;Superlabs
+        <LinkFooter
+          href="https://superlabs.co"
+          target="_blank"
+          rel="noreferrer"
+        >
+          &nbsp;SuperLabs
         </LinkFooter>
       </Footer>
     </Wrapper>
   );
 };
+
 
 export default Sidebar;

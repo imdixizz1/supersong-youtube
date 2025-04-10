@@ -5,19 +5,32 @@ export const GridBroadcastWrapper = styled.div`
   padding: 10px;
 `;
 
+// export const GridBroadcast = styled.div`
+//   display: grid;
+//   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+//   grid-gap: 16px;
+//   width: 100%;
+//   height: calc(100% - 56px);
+//   padding: 4rem 4rem 4rem 2rem;
+//   @media (max-width: 520px) {
+//     padding: 4rem 2rem;
+//   }
+//   background-color: #f9f9f9;
+//   overflow: auto;
+// `;
+
 export const GridBroadcast = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   grid-gap: 16px;
   width: 100%;
-  height: calc(100% - 56px);
   padding: 4rem 4rem 4rem 2rem;
   @media (max-width: 520px) {
     padding: 4rem 2rem;
   }
   background-color: #f9f9f9;
-  overflow: auto;
 `;
+
 
 export const CustomVideos = styled.video`
   aspect-ratio: 16 / 9;

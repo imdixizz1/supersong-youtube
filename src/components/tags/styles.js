@@ -2,40 +2,59 @@ import styled from "styled-components";
 
 export const Wrapper = styled.div`
   width: 100%;
-  /* min-height: 56px; */
   display: flex;
-  flex-wrap: wrap;
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
   align-items: center;
   gap: 10px;
   border-top: 1px solid #ccc;
   border-bottom: 1px solid #ccc;
   padding: 1.5rem 2rem;
+
+  /* Optional: Add smooth scrolling for a better user experience */
+  scroll-behavior: smooth;
+
+  /* Hide scrollbar in Firefox */
+  scrollbar-width: thin;
+  scrollbar-color: #ccc transparent;
+
+  /* Hide scrollbar in WebKit browsers (like Chrome) */
+  &::-webkit-scrollbar {
+    height: 6px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: #ccc;
+    border-radius: 4px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
 `;
 
 export const Chip = styled.div`
+  white-space: nowrap;
   height: 32px;
-  width: fit-content;
-  min-width: 12px;
   padding: 0 10px;
   border-radius: 16px;
   box-sizing: border-box;
-  outline: none;
-  overflow: hidden;
   cursor: pointer;
   display: flex;
-  flex-direction: row;
   align-items: center;
   color: ${(props) => (props.isActive ? "#fff" : "#030303")};
   background-color: ${(props) => (props.isActive ? "#030303" : "#e8e8e8")};
   border: 1px solid #ccc;
+  flex-shrink: 0; // important to prevent shrinking in a scroll container
 `;
+
 
 export const HeroBanner = styled.div`
   position: relative;
-  width: 100vw;
-  height: 100vh; /* full viewport height */
-  margin: 0;
-  border-radius: 0;
+  width: 100%;
+  height: 250px; /* or any height you want */
+  margin: 0 auto;
   overflow: hidden;
 
   img {
@@ -45,6 +64,8 @@ export const HeroBanner = styled.div`
     display: block;
   }
 `;
+
+
 
 
 export const BannerText = styled.div`

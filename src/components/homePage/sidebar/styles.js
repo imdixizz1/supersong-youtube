@@ -2,51 +2,85 @@ import styled from "styled-components";
 
 export const Wrapper = styled.div`
   width: 240px;
-  height: 100%;
+  height: calc(100vh - 60px); // Adjust for navbar height
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
   padding-top: 1rem;
   margin-right: 0.5rem;
-  position: relative;
-  background-color: #fff;
 
   @media (max-width: 900px) {
     display: none;
   }
 `;
 
-export const Container = styled.div`
-  padding: 0px 24px;
-  color: #030303;
+export const ScrollContent = styled.div`
   display: flex;
-  align-items: center;
-  height: 40px;
-
-  &:hover {
-    background-color: #cecece;
+  flex-direction: column;
+  overflow-y: auto;
+  height: calc(100% - 60px); // Reserve space for footer
+  &::-webkit-scrollbar {
+    width: 8px;
+  }
+  &::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
   }
 `;
 
-export const Text = styled.p`
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  padding-left: 1.5rem;
+export const Container = styled.div`
+  display: flex;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  cursor: pointer;
+  transition: background 0.2s ease-in;
+
+  &:hover {
+    background-color: #f1f1f1;
+  }
+
+  svg {
+    margin-right: 10px;
+  }
 `;
 
-export const HrElement = styled.div`
-  width: 100%;
-  height: 1px;
-  background-color: #ccc;
-  margin-top: 1rem;
+export const Text = styled.span`
+  font-size: 1.2rem;
+  color: #333;
 `;
 
-export const Footer = styled.p`
+export const HrElement = styled.hr`
+  margin: 1rem 0;
+  border: none;
+  border-top: 1px solid #ddd;
+`;
+
+/**
+ * The footer will appear naturally after the last menu item.
+ * If content is too short, it stays close to the last item.
+ */
+export const Footer = styled.div`
+  padding: 1rem;
+  font-size: 1.3rem;
+  color: #777;
   text-align: center;
-  position: absolute;
-  bottom: 10px;
-  left: 20px;
-  color: #666c8e;
+  background-color: #fff;
+  height: 60px; // Fixed height for footer
+  border-top: 1px solid #ddd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;
 
 export const LinkFooter = styled.a`
-  color: #e53102;
+  color: #ff5722;
+  text-decoration: none;
+  font-weight: 500;
+
+  &:hover {
+    text-decoration: underline;
+  }
 `;

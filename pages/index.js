@@ -11,7 +11,7 @@ import { Actions } from "../src/components/provider/ApiKeys/reducer";
 import { filterTags } from "../src/utils/functions/index";
 import videoJson from "../src/components/videos";
 import { BannerText, HeroBanner } from "../src/components/tags/styles";
-import Image from "next/image";
+import banner from "../public/images.png";
 
 export default function Home() {
   const [videos, setVideos] = useState([]);
@@ -60,7 +60,8 @@ export default function Home() {
   };
 
   return (
-    <div>
+    <>
+      {" "}
       <Head>
         <title>SuperFan | Watch and Discover Music Videos</title>
         <meta
@@ -70,36 +71,45 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/fav2.ico" />
       </Head>
-
       <Navbar
         query={query}
         handleQuery={handleQuery}
         getVideos={handleFiltering}
         removeQuery={removeQuery}
       />
+      <div
+        style={{
+          display: "flex",
+          height: "calc(100vh - 60px)",
+          overflow: "hidden",
+        }}
+      >
+        {/* Sidebar stays fixed in place */}
+        <div
+          style={{ height: "100vh", position: "sticky", top: 0, flexShrink: 0 }}
+        >
+          <Sidebar />
+        </div>
 
-      <Wrapper>
-        <Sidebar />
-        <GridWrapper>
-          {/* <HeroBanner>
-            <image
-              src="/images.png"
+        {/* Scrollable right section */}
+        <div style={{ flex: 1, overflowY: "auto", paddingRight: "1rem" }}>
+          <HeroBanner>
+            <img
+              src={banner.src}
               alt="Music Banner"
-              height={300}
-              width={1200}
-              
+              style={{ width: "100%", objectFit: "cover" }}
             />
+            <BannerText>Discover the Best in Music with Superfan 🎵</BannerText>
+          </HeroBanner>
 
-            <BannerText>Discover the Best in Music with Superfan  🎵</BannerText>
-          </HeroBanner> */}
           <Tags
             tags={tags}
             activeTag={activeTag}
             handleActiveTag={handleActiveTag}
           />
           <GridVideos videos={videos} activeTag={activeTag} />
-        </GridWrapper>
-      </Wrapper>
-    </div>
+        </div>
+      </div>
+    </>
   );
 }

@@ -40,8 +40,17 @@ export const Wrapper = styled.div`
   display: flex;
 `;
 
+// export const GridWrapper = styled.div`
+//   display: flex;
+//   flex-direction: column;
+//   width: 100%;
+// `;
+
+
 export const GridWrapper = styled.div`
+  flex: 1;
   display: flex;
   flex-direction: column;
-  width: 100%;
+  height: auto;
+  overflow: unset;
 `;
