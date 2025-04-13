@@ -11,7 +11,7 @@ import { Actions } from "../src/components/provider/ApiKeys/reducer";
 import { filterTags } from "../src/utils/functions/index";
 import videoJson from "../src/components/videos";
 import { BannerText, HeroBanner } from "../src/components/tags/styles";
-import banner from "../public/images.png";
+import banner from "../public/banner.jpg";
 
 export default function Home() {
   const [videos, setVideos] = useState([]);
