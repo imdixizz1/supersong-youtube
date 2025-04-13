@@ -9,10 +9,14 @@ export const Wrapper = styled.div`
   padding-top: 1rem;
   margin-right: 0.5rem;
 
+  position: relative;      // ✅ THIS is essential
+  z-index: 1001;           // ✅ Now this works
+
   @media (max-width: 900px) {
     display: none;
   }
 `;
+
 
 export const ScrollContent = styled.div`
   display: flex;

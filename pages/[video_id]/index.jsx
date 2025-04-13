@@ -201,7 +201,6 @@ function VideoPage() {
   if (!video)
     return <div style={{ padding: "20px" }}>Loading or video not found.</div>;
 
-  console.log("video===", video);
 
   const formatViews = (num) => {
     if (num >= 1e6) return (num / 1e6).toFixed(1).replace(/\.0$/, "") + "M";

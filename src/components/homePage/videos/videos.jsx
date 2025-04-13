@@ -15,7 +15,6 @@ import { useRouter } from "next/router";
 
 function Video({ video }) {
 
-  console.log("video===", video);
 
   const { thumbnail, id, title, createdAt,src ,author,text,date} = video;
   const [view, setView] = useState("");

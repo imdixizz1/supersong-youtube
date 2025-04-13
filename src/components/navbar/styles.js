@@ -10,13 +10,25 @@ export const NavbarWrapper = styled.div`
   align-items: center;
   background-color: #fff;
   gap: 20px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  transition: transform 0.3s ease;
+
+  @media (max-width: 900px) {
+    transform: ${({ isVisible }) => (isVisible ? "translateY(0)" : "translateY(-100%)")};
+  }
 `;
+
+
 
 export const Logo = styled.img`
   width: 120px;
-  height: auto;
+  height: 56px;
   object-fit: contain;
   cursor: pointer;
+  overflow: hidden;
+  z-index: -100;
 
   @media (max-width: 768px) {
     width: 90px;
