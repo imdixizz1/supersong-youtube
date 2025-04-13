@@ -11,7 +11,7 @@ import { Actions } from "../src/components/provider/ApiKeys/reducer";
 import { filterTags } from "../src/utils/functions/index";
 import videoJson from "../src/components/videos";
 import { BannerText, HeroBanner } from "../src/components/tags/styles";
-import banner from "../public/banner.jpg";
+// import banner from "../public/images.png";
 
 export default function Home() {
   const [videos, setVideos] = useState([]);
@@ -95,7 +95,7 @@ export default function Home() {
         <div style={{ flex: 1, overflowY: "auto", paddingRight: "1rem" }}>
           <HeroBanner>
             <img
-              src={banner.src}
+              src="/images.png"
               alt="Music Banner"
               style={{ width: "100%", objectFit: "cover" }}
             />
