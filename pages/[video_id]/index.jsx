@@ -157,6 +157,29 @@ const Author = styled.p`
   }
 `;
 
+const StatsRow = styled.div`
+  display: flex;
+  gap: 20px;
+  font-size: 13px;
+  color: #555;
+  margin: 8px 0;
+
+  @media (max-width: 768px) {
+    font-size: 12px;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+`;
+
+const SmallStat = styled.span`
+  white-space: nowrap;
+`;
+
+const ViewsText = styled.p`
+  margin: 4px 0 0;
+  font-size: 12px;
+  color: #666;
+`;
 
 // ------------- Main Page ----------------
 function VideoPage() {
@@ -178,8 +201,14 @@ function VideoPage() {
   if (!video)
     return <div style={{ padding: "20px" }}>Loading or video not found.</div>;
 
-
   console.log("video===", video);
+
+  const formatViews = (num) => {
+    if (num >= 1e6) return (num / 1e6).toFixed(1).replace(/\.0$/, "") + "M";
+    if (num >= 1e3) return (num / 1e3).toFixed(1).replace(/\.0$/, "") + "K";
+    return num.toString();
+  };
+
 
   return (
     <div>
@@ -204,28 +233,36 @@ function VideoPage() {
             <Title>{video.title}</Title>
             {video.author && <Author>{video.author}</Author>}
             <Description>{video.description}</Description>
+            <StatsRow>
+              <SmallStat>👍 {video.likeCount || 0}</SmallStat>
+              <SmallStat>💬 {video.commentCount || 0}</SmallStat>
+              <SmallStat>👁️ {video.views || 0}</SmallStat>
+            </StatsRow>
           </Col1>
 
           {/* Sidebar Videos */}
           <Col2>
-            {otherVideos.map((vid) => (
-              <Link href={`/${vid.id}`} key={vid.id} passHref>
-                <VideoBox>
-                  <Thumb
-                    src={vid.thumbnail || "/default-thumbnail.jpg"}
-                    alt={vid.title}
-                  />
-                  <VideoInfo>
-                    <VideoTitle>{vid.title}</VideoTitle>
-                    <VideoAuthor>{vid.author || "Unknown Artist"}</VideoAuthor>
-                    <VideoDescription>
-                      {vid.description || "No description available."}
-                    </VideoDescription>
-                  </VideoInfo>
-                </VideoBox>
-              </Link>
-            ))}
-          </Col2>
+  {otherVideos.map((vid) => (
+    <Link href={`/${vid.id}`} key={vid.id} passHref>
+      <VideoBox>
+        <Thumb
+          src={vid.thumbnail || "/default-thumbnail.jpg"}
+          alt={vid.title}
+        />
+        <VideoInfo>
+          <VideoTitle>{vid.title}</VideoTitle>
+          <VideoAuthor>{vid.author || "Unknown Artist"}</VideoAuthor>
+          <VideoDescription>
+            {vid.description || "No description available."}
+          </VideoDescription>
+         <ViewsText>👁️ {formatViews(vid.views || 0)} views</ViewsText>
+
+        </VideoInfo>
+      </VideoBox>
+    </Link>
+  ))}
+</Col2>
+
         </ContentVideo>
       </Wrapper>
     </div>
