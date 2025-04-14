@@ -14,9 +14,7 @@ import {
 import { useRouter } from "next/router";
 
 function Video({ video }) {
-
-
-  const { thumbnail, id, title, createdAt,src ,author,text,date} = video;
+  const { thumbnail, id, title, createdAt, src, author, text, date } = video;
   const [view, setView] = useState("");
   const router = useRouter();
 
@@ -28,20 +26,16 @@ function Video({ video }) {
 
   return (
     <>
-      <Wrapper>
+      <Wrapper
+        onClick={() =>
+          router.push({
+            pathname: `/${id}`,
+          })
+        }
+      >
         <Thumbnail src={thumbnail} alt={"thumbnail"}></Thumbnail>
 
-        <CustomVideos
-          autoPlay
-          muted
-          loop
-          preload="auto"
-          onClick={() =>
-            router.push({
-              pathname: `/${id}`,
-            })
-          }
-        >
+        <CustomVideos autoPlay muted loop preload="auto">
           <source src={src} type="video/mp4" />
         </CustomVideos>
         <SubInformationsWrapper>
