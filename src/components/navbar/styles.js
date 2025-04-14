@@ -3,21 +3,21 @@ import Image from "next/image";
 
 export const NavbarWrapper = styled.div`
   width: 100%;
-  height: 56px;
-  padding: 0 16px;
+  overflow: hidden;
+  background-color: #fff;
+  z-index: 100;
+  position: sticky;
+  top: 0;
+  transition: height 0.3s ease, opacity 0.3s ease, transform 0.3s ease;
   display: flex;
   flex-direction: row;
   align-items: center;
-  background-color: #fff;
-  gap: 20px;
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  transition: transform 0.3s ease;
+  padding: 0 16px;
 
-  @media (max-width: 900px) {
-    transform: ${({ isVisible }) => (isVisible ? "translateY(0)" : "translateY(-100%)")};
-  }
+  height: ${({ isVisible }) => (isVisible ? "56px" : "0")};
+  opacity: ${({ isVisible }) => (isVisible ? 1 : 0)};
+  transform: ${({ isVisible }) => (isVisible ? "translateY(0)" : "translateY(-100%)")};
+  pointer-events: ${({ isVisible }) => (isVisible ? "auto" : "none")};
 `;
 
 
