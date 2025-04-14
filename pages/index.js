@@ -75,7 +75,7 @@ export default function Home() {
           <Sidebar />
         </div>
 
-        <div ref={scrollableRef} style={{ flex: 1, overflowY: "auto", paddingRight: "1rem" }}>
+        <div ref={scrollableRef} style={{ flex: 1, overflowY: "auto", }}>
           <HeroBanner>
             <img src="/images.png" alt="Music Banner" style={{ width: "100%", objectFit: "cover" }} />
             <BannerText>Discover the Best in Music with Superfan 🎵</BannerText>
