@@ -12,7 +12,7 @@ export const NavbarWrapper = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
-  padding: 0 16px;
+  padding: 0 8px;
 
   height: ${({ isVisible }) => (isVisible ? "56px" : "0")};
   opacity: ${({ isVisible }) => (isVisible ? 1 : 0)};
@@ -24,11 +24,12 @@ export const NavbarWrapper = styled.div`
 
 export const Logo = styled.img`
   width: 120px;
-  height: 56px;
+  height: 120px;
   object-fit: contain;
   cursor: pointer;
   overflow: hidden;
-  z-index: -100;
+  z-index: 10000;
+  padding-right: 5px;
 
   @media (max-width: 768px) {
     width: 90px;
@@ -102,15 +103,17 @@ export const Col2 = styled.div`
   align-items: center;
   justify-content: center;
   flex: 1;
-  width: 100%;
+  width: 70%;
+  padding: 0 20px;
 `;
 
 export const Col3 = styled.div`
   display: flex;
   align-items: center;
   gap: 20px;
-
+  
   @media (max-width: 400px) {
+    margin-left: 20px;
     display: none;
   }
 `;
