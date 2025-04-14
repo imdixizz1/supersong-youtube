@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useRouter } from "next/router";
 import videoJson from "../../src/components/videos";
 import Navbar from "../../src/components/navbar";
@@ -185,6 +185,7 @@ const ViewsText = styled.p`
 function VideoPage() {
   const router = useRouter();
   const { video_id } = router.query;
+  const scrollableRef = useRef(null); // 👈 ref for scrollable content
 
   const [video, setVideo] = useState(null);
   const [otherVideos, setOtherVideos] = useState([]);
@@ -209,6 +210,7 @@ function VideoPage() {
   };
 
 
+
   return (
     <div>
       <Navbar
@@ -216,9 +218,10 @@ function VideoPage() {
         handleQuery={() => {}}
         getVideos={() => {}}
         removeQuery={() => {}}
+        scrollableRef={scrollableRef}
       />
 
-      <Wrapper>
+<Wrapper ref={scrollableRef} style={{ overflowY: "auto", height: "100vh" }}>
         <ContentVideo>
           {/* Main Video Column */}
           <Col1>
