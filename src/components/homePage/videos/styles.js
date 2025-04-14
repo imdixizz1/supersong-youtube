@@ -24,7 +24,7 @@ export const GridBroadcast = styled.div`
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   grid-gap: 16px;
   width: 100%;
-  padding: 4rem 4rem 4rem 2rem;
+  padding: 2rem 2rem 2rem 2rem;
   @media (max-width: 520px) {
     padding: 4rem 2rem;
   }
