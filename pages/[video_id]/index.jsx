@@ -8,6 +8,9 @@ import Link from "next/link";
 // ----------- Styled Components -----------
 const Wrapper = styled.div`
   padding: 20px;
+    @media (max-width: 768px) {
+  padding: 0;
+  }
 `;
 
 const ContentVideo = styled.div`
@@ -36,26 +39,46 @@ const VideoContainer = styled.div`
   position: relative;
   width: 100%;
   aspect-ratio: 16 / 9;
-  max-height: 70vh;
   background: black;
-  border-radius: 10px;
   overflow: hidden;
+  border-radius: 10px;
+
+  @media (max-width: 768px) {
+    border-radius: 0;
+    height: auto;
+    max-height: none;
+    width: 100vw;
+    max-width: 100%;
+  }
 `;
 
+
+
+
 const StyledVideo = styled.video`
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  object-fit: cover;  // or "contain" if you don't want cropping
+  display: block;
 `;
+
+
+
 
 const Col2 = styled.div`
   flex: 1;
   overflow-y: auto;
   max-height: 100%;
 
+
   @media (max-width: 768px) {
     max-height: none;
-    margin-top: 20px;
+    // margin-top: 20px;
+    padding: 10px;
+    padding-top: 0;
   }
 `;
 
@@ -90,6 +113,14 @@ const VideoInfo = styled.div`
   flex-direction: column;
   justify-content: center;
   overflow: hidden;
+`;
+
+const VideoDetails = styled.div`
+  padding: 0;
+
+  @media (max-width: 786px) {
+    padding: 10px;
+  }
 `;
 
 const VideoTitle = styled.p`
@@ -225,22 +256,25 @@ function VideoPage() {
         <ContentVideo>
           {/* Main Video Column */}
           <Col1>
-            <VideoContainer>
-              <StyledVideo key={video.src} autoPlay controls>
-                <source src={video.src} type="video/mp4" />
-                Your browser does not support the video tag.
-              </StyledVideo>
-            </VideoContainer>
+  <VideoContainer>
+    <StyledVideo key={video.src} autoPlay controls>
+      <source src={video.src} type="video/mp4" />
+      Your browser does not support the video tag.
+    </StyledVideo>
+  </VideoContainer>
 
-            <Title>{video.title}</Title>
-            {video.author && <Author>{video.author}</Author>}
-            <Description>{video.description}</Description>
-            <StatsRow>
-              <SmallStat>👍 {video.likeCount || 0}</SmallStat>
-              <SmallStat>💬 {video.commentCount || 0}</SmallStat>
-              <SmallStat>👁️ {video.views || 0}</SmallStat>
-            </StatsRow>
-          </Col1>
+  <VideoDetails>
+    <Title>{video.title}</Title>
+    {video.author && <Author>{video.author}</Author>}
+    <Description>{video.description}</Description>
+    <StatsRow>
+      <SmallStat>👍 {video.likeCount || 0}</SmallStat>
+      <SmallStat>💬 {video.commentCount || 0}</SmallStat>
+      <SmallStat>👁️ {video.views || 0}</SmallStat>
+    </StatsRow>
+  </VideoDetails>
+</Col1>
+
 
           {/* Sidebar Videos */}
           <Col2>
@@ -254,9 +288,9 @@ function VideoPage() {
         <VideoInfo>
           <VideoTitle>{vid.title}</VideoTitle>
           <VideoAuthor>{vid.author || "Unknown Artist"}</VideoAuthor>
-          <VideoDescription>
+          {/* <VideoDescription>
             {vid.description || "No description available."}
-          </VideoDescription>
+          </VideoDescription> */}
          <ViewsText>👁️ {formatViews(vid.views || 0)} views</ViewsText>
 
         </VideoInfo>
