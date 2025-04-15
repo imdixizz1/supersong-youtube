@@ -22,6 +22,7 @@ const ContentVideo = styled.div`
   @media (max-width: 768px) {
     flex-direction: column;
     height: auto;
+    gap: 10px;
   }
 `;
 
@@ -64,8 +65,6 @@ const StyledVideo = styled.video`
   object-fit: cover;  // or "contain" if you don't want cropping
   display: block;
 `;
-
-
 
 
 const Col2 = styled.div`
@@ -118,9 +117,10 @@ const VideoInfo = styled.div`
 const VideoDetails = styled.div`
   padding: 0;
 
-  @media (max-width: 786px) {
-    padding: 10px;
-  }
+@media (max-width: 786px) {
+  padding: 0 10px;
+}
+
 `;
 
 const VideoTitle = styled.p`
